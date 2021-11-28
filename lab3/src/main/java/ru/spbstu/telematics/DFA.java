@@ -10,15 +10,17 @@ public class DFA {
 
     public void setUP() {
         isFirst = true;
-        Entry s0 = new Entry("S0", false, true);
-        Entry s1 = new Entry("S1", false, false);
-        Entry s2 = new Entry("S2", true,  false);
-        Entry s3 = new Entry("S3", true,  false);
-        s0.setMap(s1, s0);
-        s1.setMap(s1, s2);
-        s2.setMap(s3, s1);
-        s3.setMap(s3, s3);
-        current = s0;
+        Entry A_ = new Entry("A'", false, true);
+        Entry B_ = new Entry("B'", false, false);
+        Entry A = new Entry("A", true,  false);
+        Entry B = new Entry("B", false,  false);
+        Entry C = new Entry("C", false,  false);
+        A_.setMap(B_, C);
+        B_.setMap(C, A);
+        A.setMap(B, C);
+        B.setMap(C, A);
+        C.setMap(C, C);
+        current = A_;
     }
 
     public DFA() {
