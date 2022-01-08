@@ -4,6 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
         PDA pda = new PDA();
-        System.out.println(pda.process("aaaaaaaaaaabbbbbbbbbbbbb"));
+        System.out.println(pda.generate(10));
     }
 }

@@ -2,6 +2,7 @@ package ru.spbstu.telematics;
 
 import org.apache.commons.lang3.tuple.Pair;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,28 +30,54 @@ public class PDA {
     }
 
     public String process(String input) {
-        String result = recursive(new Context(startState, input));
-        if (result == null) {
-            result = "Цепочка НЕ принадлежит грамматике";
+        StringBuilder textResult = new StringBuilder();
+        boolean result = recursive(new Context(startState, input), textResult);
+        if (!result) {
+            textResult = new StringBuilder("Цепочка НЕ принадлежит грамматике");
         }
-        return result;
+        return textResult.toString();
     }
 
-    public String recursive(Context context) {
+    public boolean recursive(Context context, StringBuilder res) {
         if (context.isFinite()) {
-            return context + "\n" + "Цепочка принадлежит грамматике";
+            res.append(context).append("\n").append("Цепочка принадлежит грамматике");
+            return true;
         }
         List<Pair<Context, Edge>> next = context.next();
         for (Pair<Context, Edge> pair : next) {
-            String result = recursive(pair.getKey());
+            boolean result = recursive(pair.getKey(), res);
+            if (result) {
+                res.insert(0, context + " " + pair.getValue() + "\n");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String generate(int size) {
+        return recursiveGenerate(new Context(startState, ""),"", size);
+    }
+
+    public String recursiveGenerate(Context context, String str, int size) {
+        if (context.isFinite2() || str.length() >= size) {
+            if (str.length() == size) {
+                return str;
+            } else {
+                return null;
+            }
+        }
+        List<Pair<Context, Edge>> next = context.nextRandom();
+        Collections.shuffle(next);
+        for (Pair<Context, Edge> pair : next) {
+            String strNew = str;
+            if (!pair.getValue().input.getKey().equals("ε")) {
+                strNew += pair.getValue().input.getKey();
+            }
+            String result = recursiveGenerate(pair.getKey(), strNew, size);
             if (result != null) {
-                return context + " " + pair.getValue() + "\n" + result;
+                return result;
             }
         }
         return null;
-    }
-
-    public void generate(int size) {
-
     }
 }

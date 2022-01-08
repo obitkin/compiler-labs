@@ -17,6 +17,6 @@ public class Edge {
 
     @Override
     public String toString() {
-        return "δ = {(" + from.name + "," + input.getKey() + "," + input.getValue() + ") " + output + "}";
+        return "δ = ((" + from.name + "," + input.getKey() + "," + input.getValue() + "), " + output + ")";
     }
 }
