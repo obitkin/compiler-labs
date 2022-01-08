@@ -4,7 +4,6 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class PDA {
 
@@ -63,7 +62,7 @@ public class PDA {
     }
 
     public String recursiveGenerate(Context context, String str, int size) {
-        if (context.isFinite2() || str.length() >= size) {
+        if (context.isFinite() || str.length() >= size) {
             if (str.length() == size) {
                 return str;
             } else {

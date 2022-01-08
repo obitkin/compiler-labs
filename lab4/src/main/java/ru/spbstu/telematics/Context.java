@@ -19,13 +19,7 @@ public class Context {
 
     public boolean isFinite() {
         return current.isFinite &&
-                signals.isEmpty() &&
-                stack.size() == 1 &&
-                stack.peek().equals("⟂");
-    }
-
-    public boolean isFinite2() {
-        return current.isFinite &&
+                (signals == null || signals.isEmpty()) &&
                 stack.size() == 1 &&
                 stack.peek().equals("⟂");
     }
