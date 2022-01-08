@@ -55,7 +55,11 @@ public class PDA {
     }
 
     public String generate(int size) {
-        return recursiveGenerate(new Context(startState, ""),"", size);
+        String res = recursiveGenerate(new Context(startState, ""),"", size);
+        if (res == null) {
+            return "Нет последовательности заданной длины: " + size;
+        }
+        return res;
     }
 
     public String recursiveGenerate(Context context, String str, int size) {
