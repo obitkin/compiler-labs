@@ -2,12 +2,16 @@ package ru.spbstu.telematics;
 
 import org.apache.commons.lang3.tuple.Pair;
 
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class PDA {
 
     public Entry startState;
+    Set<String> alphabet = new HashSet<>(Arrays.asList("a", "b"));
 
     public PDA() {
         Entry q_0 = new Entry("q_0", false);
@@ -29,14 +33,18 @@ public class PDA {
     }
 
     public String process(String input) {
-        String replaced = input.replace("a", "").replace("b", "");
-        if (!replaced.isEmpty()) {
-            return "Ошибка: символ не из алфавита: '" + replaced.charAt(0) + "'";
-        }
         StringBuilder textResult = new StringBuilder();
         boolean result = recursive(new Context(startState, input), textResult);
         if (!result) {
-            textResult = new StringBuilder("Цепочка НЕ принадлежит грамматике");
+            String tmp = input;
+            for (String sym : alphabet) {
+                tmp = tmp.replace(sym, "");
+            }
+            if (!tmp.isEmpty()) {
+                return "Ошибка: символ не из алфавита: '" + tmp.charAt(0) + "'";
+            } else {
+                return "Цепочка НЕ принадлежит грамматике";
+            }
         }
         return textResult.toString();
     }
