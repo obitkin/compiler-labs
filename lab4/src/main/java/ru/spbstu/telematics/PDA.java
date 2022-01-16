@@ -29,6 +29,10 @@ public class PDA {
     }
 
     public String process(String input) {
+        String replaced = input.replace("a", "").replace("b", "");
+        if (!replaced.isEmpty()) {
+            return "Ошибка: символ не из алфавита: '" + replaced.charAt(0) + "'";
+        }
         StringBuilder textResult = new StringBuilder();
         boolean result = recursive(new Context(startState, input), textResult);
         if (!result) {
