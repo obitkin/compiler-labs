@@ -8,17 +8,26 @@ import java.util.Stack;
 public class Grammar {
 
     List<String> alp = Arrays.asList("a", "+", "*", "(", ")");
-    List<String> sem = Arrays.asList("y1", "y2", "y3", "y4");
+    String start = "operator fun String.times(other: String): String {\n" +
+            "    return other + this\n" +
+            "}\nfun main(args: Array<String>) {\n\tvar i = 0\n\tprintln(";
+    String mul = " * ";
+    String plus = " + ";
+    String open = " ( ";
+    String close = " ) ";
+    String end = ")\n}";
+    String arg = "args[i++]";
+    List<String> sem = Arrays.asList(start, mul, plus, open, close, end, arg);
 
-    Pair<String, List<String>> r1 = Pair.of("S'", List.of("$", "S"));
+    Pair<String, List<String>> r1 = Pair.of("S'", List.of("$", end, "S", start));
     Pair<String, List<String>> r2 = Pair.of("S", List.of("A", "B"));
-    Pair<String, List<String>> r3 = Pair.of("A", List.of("A", "B", "+"));
+    Pair<String, List<String>> r3 = Pair.of("A", List.of("A", "B", plus, "+"));
     Pair<String, List<String>> r4 = Pair.of("A", List.of());
     Pair<String, List<String>> r5 = Pair.of("B", List.of("C", "D"));
-    Pair<String, List<String>> r6 = Pair.of("C", List.of("C", "D", "*"));
+    Pair<String, List<String>> r6 = Pair.of("C", List.of("C", "D", mul, "*"));
     Pair<String, List<String>> r7 = Pair.of("C", List.of());
-    Pair<String, List<String>> r8 = Pair.of("D", List.of(")", "S", "("));
-    Pair<String, List<String>> r9 = Pair.of("D", List.of("a"));
+    Pair<String, List<String>> r8 = Pair.of("D", List.of(close, ")", "S", open, "("));
+    Pair<String, List<String>> r9 = Pair.of("D", List.of(arg, "a"));
 
     HashMap<Pair<String, String>, Pair<String, List<String>>> table = new HashMap<>();
 
@@ -72,7 +81,8 @@ public class Grammar {
                 }
             }
         }
-        System.out.println(semantic);
+        System.out.println("Результат семантических действий:");
+        System.out.println(semantic.stream().reduce(String::concat).orElse("Error"));
         return true;
     }
 
