@@ -20,25 +20,23 @@ public class Main {
                         if (input.equals("-1")) {
                             break;
                         }
-                        System.out.println(grammar.process(input));
+                        try {
+                            System.out.println("Цепочка" + (grammar.process(input) ? " " : " не ") + "принадлежит грамматике");
+                        } catch (IllegalArgumentException ex) {
+                            System.out.println(ex.getMessage());
+                        }
+
                     }
                     break;
                 }
                 case 2: {
                     while (true) {
-                        System.out.println("\n\nВведите размер или '-1' для выхода");
+                        System.out.println("\n\nНажмите 'Enter' для генерации или Введите '-1' для выхода");
                         String input = scanner.nextLine();
                         if (input.equals("-1")) {
                             break;
                         }
-                        String res;
-                        try {
-                            System.out.println(grammar.generate());
-                        } catch (NumberFormatException ex) {
-                            System.out.print("Неверный формат числа: " + input);
-                        } catch (IllegalArgumentException ex) {
-                            System.out.print("Значение меньше нуля: " + input);
-                        }
+                        System.out.println(grammar.generate());
                     }
                     break;
                 }

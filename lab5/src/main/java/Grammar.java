@@ -7,7 +7,7 @@ import java.util.Stack;
 
 public class Grammar {
 
-    List<String> alp = Arrays.asList("a", "+", "*", "(", ")");
+    List<String> alp = Arrays.asList("a", "+", "*", "(", ")", "$");
     String start = "operator fun String.times(other: String): String {\n" +
             "    return other + this\n" +
             "}\nfun main(args: Array<String>) {\n\tvar i = 0\n\tprintln(";
@@ -55,10 +55,16 @@ public class Grammar {
     }
 
     public boolean process(String input) {
+        String check = input;
+        for (String alph : alp) {
+            check = check.replace(alph, "");
+        }
+        if (!check.isEmpty()) {
+            throw new IllegalArgumentException("Символ не из алфавита: " + check.charAt(0));
+        }
         List<String> semantic = new ArrayList<>();
         Stack<String> stack = new Stack<>();
         stack.push("S'");
-        input += "$";
         while (!input.isEmpty()) {
             String st;
             if (stack.isEmpty()) {
@@ -81,6 +87,9 @@ public class Grammar {
                 }
             }
         }
+        if (!stack.isEmpty()) {
+            return false;
+        }
         System.out.println("Результат семантических действий:");
         System.out.println(semantic.stream().reduce(String::concat).orElse("Error"));
         return true;
@@ -101,7 +110,7 @@ public class Grammar {
         for (int i = 0; i < size; i++) {
             res += next(res);
         }
-        return res;
+        return res + "$";
     }
 
     private String next(String building) {
