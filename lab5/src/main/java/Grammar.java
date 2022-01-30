@@ -60,7 +60,7 @@ public class Grammar {
             check = check.replace(alph, "");
         }
         if (!check.isEmpty()) {
-            throw new IllegalArgumentException("Символ не из алфавита: " + check.charAt(0));
+            throw new IllegalArgumentException("Символ не из алфавита: '" + check.charAt(0) + "'");
         }
         List<String> semantic = new ArrayList<>();
         Stack<String> stack = new Stack<>();

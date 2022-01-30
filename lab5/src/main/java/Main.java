@@ -36,7 +36,11 @@ public class Main {
                         if (input.equals("-1")) {
                             break;
                         }
-                        System.out.println(grammar.generate());
+                        if (input.isEmpty()) {
+                            System.out.println(grammar.generate());
+                        } else {
+                            System.out.println("Ошибка ввода: Ожидалась пустая строка или '-1'");
+                        }
                     }
                     break;
                 }
