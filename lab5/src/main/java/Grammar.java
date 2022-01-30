@@ -11,10 +11,10 @@ public class Grammar {
     String start = "operator fun String.times(other: String): String {\n" +
             "    return other + this\n" +
             "}\nfun main(args: Array<String>) {\n\tvar i = 0\n\tprintln(";
-    String mul = " * ";
-    String plus = " + ";
-    String open = " ( ";
-    String close = " ) ";
+    String mul = "*|";
+    String plus = "+|";
+    String open = "(|";
+    String close = ")|";
     String end = ")\n}";
     String arg = "args[i++]";
     List<String> sem = Arrays.asList(start, mul, plus, open, close, end, arg);
@@ -91,51 +91,47 @@ public class Grammar {
             return false;
         }
         System.out.println("Результат семантических действий:");
-        System.out.println(semantic.stream().reduce(String::concat).orElse("Error"));
+        System.out.println(semantic.stream().reduce(String::concat).orElse("Error").replace("|", ""));
         return true;
     }
 
     public String generate() {
+        Random random = new Random();
         String output;
         do {
-            output = generateRandom();
+            int size = random.nextInt(25) + random.nextInt(25);
+            output = "";
+            for (int i = 0; i < size; i++) {
+                if (output.isEmpty()) {
+                    output += randStrings(List.of("(", "a"));
+                }
+                String last = String.valueOf(output.charAt(output.length() - 1));
+                switch (last) {
+                    case "(" : {
+                        output += randStrings(List.of("(", "a"));
+                        break;
+                    }
+                    case "a" : {
+                        output += randStrings(List.of("+", "*", ")"));
+                        break;
+                    }
+                    case ")" : {
+                        output += randStrings(List.of("+", ")", "*"));
+                        break;
+                    }
+                    case "*" :
+                    case "+" : {
+                        output += randStrings(List.of("a", "("));
+                        break;
+                    }
+                    default: {
+                        throw new RuntimeException("Unexpected symbol");
+                    }
+                }
+            }
+            output += "$";
         } while (!process(output));
         return output;
-    }
-
-    private String generateRandom() {
-        Random random = new Random();
-        int size = random.nextInt(25) + random.nextInt(25);
-        String res = "";
-        for (int i = 0; i < size; i++) {
-            res += next(res);
-        }
-        return res + "$";
-    }
-
-    private String next(String building) {
-        if (building.isEmpty()) {
-            return randStrings(List.of("(", "a"));
-        }
-        String last = String.valueOf(building.charAt(building.length() - 1));
-        switch (last) {
-            case "(" : {
-                return randStrings(List.of("(", "a"));
-            }
-            case "a" : {
-                return randStrings(List.of("+", "*", ")"));
-            }
-            case ")" : {
-                return randStrings(List.of("+", ")", "*"));
-            }
-            case "*" :
-            case "+" : {
-                return randStrings(List.of("a", "("));
-            }
-            default: {
-                throw new RuntimeException("Unexpected symbol");
-            }
-        }
     }
 
     private String randStrings(List<String> list) {
