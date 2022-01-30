@@ -33,17 +33,12 @@ public class Main {
                         }
                         String res;
                         try {
-                            int i = Integer.parseInt(input);
-                            if (i < 0) {
-                                throw new IllegalArgumentException();
-                            }
                             System.out.println(grammar.generate());
                         } catch (NumberFormatException ex) {
                             System.out.print("Неверный формат числа: " + input);
                         } catch (IllegalArgumentException ex) {
                             System.out.print("Значение меньше нуля: " + input);
                         }
-
                     }
                     break;
                 }

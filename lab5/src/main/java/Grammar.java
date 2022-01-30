@@ -2,11 +2,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 import java.util.Stack;
 
 public class Grammar {
 
-    List<String> net = Arrays.asList("S'", "S", "A", "B", "C", "D");
+    List<String> alp = Arrays.asList("a", "+", "*", "(", ")");
     List<String> sem = Arrays.asList("y1", "y2", "y3", "y4");
 
     Pair<String, List<String>> r1 = Pair.of("S'", List.of("$", "S"));
@@ -50,7 +51,12 @@ public class Grammar {
         stack.push("S'");
         input += "$";
         while (!input.isEmpty()) {
-            String st = stack.peek();
+            String st;
+            if (stack.isEmpty()) {
+                st = null;
+            } else {
+                st = stack.peek();
+            }
             if (sem.contains(st)) {
                 semantic.add(stack.pop());
             } else {
@@ -58,7 +64,7 @@ public class Grammar {
                 Pair<String, List<String>> rule = table.get(Pair.of(st, ch));
                 if (rule != null) {
                     handle(stack, rule);
-                } else if (st.equals(ch)) {
+                } else if (st != null && st.equals(ch)) {
                     stack.pop();
                     input = input.substring(1);
                 } else {
@@ -66,11 +72,56 @@ public class Grammar {
                 }
             }
         }
+        System.out.println(semantic);
         return true;
     }
 
     public String generate() {
-        return "TO DO";
+        String output;
+        do {
+            output = generateRandom();
+        } while (!process(output));
+        return output;
+    }
+
+    private String generateRandom() {
+        Random random = new Random();
+        int size = random.nextInt(25) + random.nextInt(25);
+        String res = "";
+        for (int i = 0; i < size; i++) {
+            res += next(res);
+        }
+        return res;
+    }
+
+    private String next(String building) {
+        if (building.isEmpty()) {
+            return randStrings(List.of("(", "a"));
+        }
+        String last = String.valueOf(building.charAt(building.length() - 1));
+        switch (last) {
+            case "(" : {
+                return randStrings(List.of("(", "a"));
+            }
+            case "a" : {
+                return randStrings(List.of("+", "*", ")"));
+            }
+            case ")" : {
+                return randStrings(List.of("+", ")", "*"));
+            }
+            case "*" :
+            case "+" : {
+                return randStrings(List.of("a", "("));
+            }
+            default: {
+                throw new RuntimeException("Unexpected symbol");
+            }
+        }
+    }
+
+    private String randStrings(List<String> list) {
+        Random random = new Random();
+        return list.get(random.nextInt(list.size()));
     }
 
 }
