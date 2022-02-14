@@ -1,50 +1,50 @@
 NounGR = been
-H$_s$ > been
+H_s > been
 have | haven't > been
 H > been
 has | hasn't > been
-been = Verb$_{ing}$
-been < V$_{ing}$
-been < VerbGR$_{ing}$
+been = Verb_ing
+been < V_ing
+been < VerbGR_ing
 been < writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living
-Verb$_{ing}$ = Additional
-Verb$_{ing}$ < Place | in | at | on | Time | for | since
-V$_{ing}$ > Place | in | at | on | Time | for | since
-VerbGR$_{ing}$ > Place | in | at | on | Time | for | since
+Verb_ing = Additional
+Verb_ing < Place | in | at | on | Time | for | since
+V_ing > Place | in | at | on | Time | for | since
+VerbGR_ing > Place | in | at | on | Time | for | since
 writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living > Place | in | at | on | Time | for | since
 Additional = .
 Place | Time > .
-Place$_{in}$ | Place$_{at}$ | Place$_{on}$ > .
+Place_in | Place_at | Place_on > .
 garden | kitchen | factory | bank | river | city | bed | London | Russia | home | work | school | university | college | war | door | airport | desk | gym | doctor’s | bottom | window | table | balcony | bus | train | plane | shelf | box > .
 F | U > .
 hours | minutes | days | seconds | morning | yesterday | Monday | Saturday | 2019 | holidays > .
-Verb$_{ing}$ = .
-V$_{ing}$ > .
-VerbGR$_{ing}$ > .
+Verb_ing = .
+V_ing > .
+VerbGR_ing > .
 writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living > .
 A = AdjGR
 A < AdjectiveGR
 A < Adjective
 A < nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever
-AdjGR = Noun$_a$
+AdjGR = Noun_a
 AdjGR < cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
 AdjectiveGR > cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
 Adjective > cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
 nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever > cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
-Noun$_a$ = H$_s$
-Noun$_a$ < has | hasn't
+Noun_a = H_s
+Noun_a < has | hasn't
 cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier > has | hasn't
 The = AdjGR
 The < AdjectiveGR
 The < Adjective
 The < nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever
-AdjGR = Noun$_{the}$
+AdjGR = Noun_the
 AdjGR < boys | girls | students | books | teachers | tourists
 AdjectiveGR > boys | girls | students | books | teachers | tourists
 Adjective > boys | girls | students | books | teachers | tourists
 nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever > boys | girls | students | books | teachers | tourists
-Noun$_{the}$ = H
-Noun$_{the}$ < have | haven't
+Noun_the = H
+Noun_the < have | haven't
 boys | girls | students | books | teachers | tourists > have | haven't
 AdjGR = Noun
 AdjGR < lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money
@@ -54,54 +54,54 @@ nice | beautiful | small | big | black | white | typical | interesting | new | o
 Noun = H
 Noun < have | haven't
 lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money > have | haven't
-A = Noun$_a$
+A = Noun_a
 A < cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
-The = Noun$_{the}$
+The = Noun_the
 The < boys | girls | students | books | teachers | tourists
 P = H
 P < have | haven't
 We | They | You | I > have | haven't
-P$_s$ = H$_s$
-P$_s$ < has | hasn't
+P_s = H_s
+P_s < has | hasn't
 He | She | It > has | hasn't
 Adjective = AdjectiveGR
 Adjective < Adjective
 Adjective < nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever
 nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever > Adjective
 nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever > nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever
-V$_{ing}$ = ,
+V_ing = ,
 writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living > ,
-, = VerbGR$_{ing}$
-, < V$_{ing}$
+, = VerbGR_ing
+, < V_ing
 , < writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living
-V$_{ing}$ = and
+V_ing = and
 writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living > and
-and = V$_{ing}$
+and = V_ing
 and < writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living
 Place = Time
 Place < for | since
-Place$_{in}$ | Place$_{at}$ | Place$_{on}$ > for | since
-Place$_{in\;a/the}$ | London | Russia > for | since
+Place_in | Place_at | Place_on > for | since
+Place_in_a/the | London | Russia > for | since
 garden | kitchen | factory | bank | river | city | bed > for | since
-Place$_{at\;the}$ | home | work | school | university | college | war > for | since
+Place_at_the | home | work | school | university | college | war > for | since
 door | airport | desk | gym | doctor’s | bottom | window | table > for | since
-Place$_{on\;a/the}$ > for | since
+Place_on_a/the > for | since
 balcony | bus | train | plane | shelf | box > for | since
-in = Place$_{in}$
+in = Place_in
 in < the | a | London | Russia
-the = Place$_{in\;a/the}$
+the = Place_in_a/the
 the < garden | kitchen | factory | bank | river | city | bed
-a = Place$_{in\;a/the}$
+a = Place_in_a/the
 a < garden | kitchen | factory | bank | river | city | bed
-at = Place$_{at}$
+at = Place_at
 at < the | home | work | school | university | college | war
-the = Place$_{at\;the}$
+the = Place_at_the
 the < door | airport | desk | gym | doctor’s | bottom | window | table
-on = Place$_{on}$
+on = Place_on
 on < a | the
-a = Place$_{on\;a/the}$
+a = Place_on_a/the
 a < balcony | bus | train | plane | shelf | box
-the = Place$_{on\;a/the}$
+the = Place_on_a/the
 the < balcony | bus | train | plane | shelf | box
 for = U
 for < Number
