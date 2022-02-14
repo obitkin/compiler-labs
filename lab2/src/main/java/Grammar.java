@@ -1,18 +1,111 @@
-
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
 
 public class Grammar {
 
-    public boolean process(String input) {
-        String[] array = input.split(" been ");
-        if (array.length != 2 || !input.contains(" been ")) {
-            return false;
+    Map<List<String>, String> rules;
+    Map<Pair<String, String>, Relation> relationsMap;
+
+    public Grammar(Map<Pair<String, String>, Relation> relationsMap, Map<List<String>, String> rules) {
+        this.relationsMap = relationsMap;
+        this.rules = rules;
+    }
+
+    List<String> sentence;
+    List<Relation> relation;
+
+    List<String> parse(String sentence) {
+        return Arrays.stream(sentence.split(" "))
+                .flatMap(str -> Arrays.stream(str.replaceAll(",", "ε,ε").split("ε")))
+                .flatMap(str -> Arrays.stream(str.replaceAll("\\.", "ε.").split("ε")))
+                .map(String::trim)
+                .filter(str -> !str.isEmpty())
+                .collect(Collectors.toList());
+    }
+
+    public String getAll() {
+        List<String> all = new ArrayList<>();
+        int indexSentence = 0;
+        int indexRelation = 0;
+        while (indexSentence < sentence.size() || indexRelation < relation.size()) {
+            if (indexSentence < sentence.size()) {
+                all.add(sentence.get(indexSentence++));
+            }
+            if (indexRelation < relation.size()) {
+                all.add(relation.get(indexRelation++).toString());
+            }
         }
-        return NounGR(array[0]) && Verb(array[1]);
+        String result = "";
+        for (String str : all) {
+            result += str;
+            result += " ";
+        }
+        return result;
+    }
+
+    public void updateRelation() {
+        relation = new ArrayList<>();
+        for (int i = 0; i < sentence.size() - 1; i++) {
+            Pair<String, String> pair = Pair.of(sentence.get(i), sentence.get(i + 1));
+            Relation rel = relationsMap.get(pair);
+            if (rel == null) {
+                throw new RuntimeException("Incorrect string " + getAll());
+            }
+            relation.add(relationsMap.get(pair));
+        }
+    }
+
+    void step(int start, int end) {
+        List<String> key = sentence.subList(start, end);
+        List<String> sentenceNew = new ArrayList<>();
+        for (int i = 0; i < sentence.size(); i++) {
+            if (i < start || i >= end) {
+                sentenceNew.add(sentence.get(i));
+            }
+        }
+        sentence = sentenceNew;
+        sentence.add(start, rules.get(key));
+        updateRelation();
+    }
+
+    void step() {
+        if (relation.stream().allMatch(rel -> rel.equals(Relation.EQUAL))) {
+            step(0, sentence.size());
+        }
+        int indexStart = -1;
+        int indexEnd = -1;
+        for (int i = 0; i < relation.size(); i++) {
+            if (relation.get(i).equals(Relation.MORE)) {
+                indexEnd = i;
+                break;
+            }
+        }
+        for (int i = indexEnd; i >= 0; i--) {
+            if (relation.get(i).equals(Relation.LESS)) {
+                indexStart = i;
+                break;
+            }
+        }
+        if (indexStart < indexEnd && indexStart != -1) {
+            step(indexStart + 1, indexEnd + 1);
+        } else {
+            throw new RuntimeException("Incorrect string " + getAll());
+        }
+    }
+
+    public boolean process(String input) {
+        sentence = parse(input);
+        updateRelation();
+        while (sentence.size() > 1) {
+            System.out.println(getAll());
+            step();
+        }
+        return true;
     }
 
     boolean NounGR(String inputNoun) {

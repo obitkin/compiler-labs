@@ -92,7 +92,7 @@ public class Main {
                         }
                         try {
                             System.out.println("Цепочка" + (grammar.process(input) ? " " : " не ") + "принадлежит грамматике");
-                        } catch (IllegalArgumentException ex) {
+                        } catch (Exception ex) {
                             System.out.println(ex.getMessage());
                         }
 
