@@ -56,14 +56,8 @@ Noun < have | haven't
 lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money > have | haven't
 A = Noun$_a$
 A < cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
-Noun$_a$ = H$_s$
-Noun$_a$ < has | hasn't
-cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier > has | hasn't
 The = Noun$_{the}$
 The < boys | girls | students | books | teachers | tourists
-Noun = H
-Noun < have | haven't
-lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money > have | haven't
 P = H
 P < have | haven't
 We | They | You | I > have | haven't

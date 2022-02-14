@@ -56,14 +56,8 @@
     \item lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money > have | haven't
     \item A = Noun$_a$
     \item A < cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
-    \item Noun$_a$ = H$_s$
-    \item Noun$_a$ < has | hasn't
-    \item cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier > has | hasn't
     \item The = Noun$_{the}$
     \item The < boys | girls | students | books | teachers | tourists
-    \item Noun = H
-    \item Noun < have | haven't
-    \item lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money > have | haven't
     \item P = H
     \item P < have | haven't
     \item We | They | You | I > have | haven't
