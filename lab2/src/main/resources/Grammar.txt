@@ -1,0 +1,29 @@
+S -> NounGR been Verb_ing Additional . | NounGR been Verb_ing . 
+NounGR -> A AdjGR Noun_a H_s | The AdjGR Noun_the H | AdjGR Noun H | A Noun_a H_s | The Noun_the H | Noun H | P H | P_s H_s
+Noun_a -> cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
+Noun_the -> boys | girls | students | books | teachers | tourists 
+Noun -> lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money
+AdjGR -> AdjectiveGR
+AdjectiveGR -> Adjective AdjectiveGR | Adjective
+Adjective -> nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever
+P -> We | They | You | I
+P_s -> He | She | It
+Verb_ing -> V_ing | VerbGR_ing
+VerbGR_ing -> V_ing, VerbGR_ing | V_ing and V_ing
+V_ing -> writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living
+Additional -> Place Time | Place | Time 
+Place -> in Place_in | at Place_at | on Place_on
+Place_in -> the Place_in_a/the | a Place_in_a/the | London | Russia
+Place_in_a/the -> garden | kitchen | factory | bank | river | city | bed 
+Place_at -> the Place_at_the | home | work | school | university | college | war 
+Place_at_the -> door | airport | desk | gym | doctor's | bottom | window | table
+Place_on -> a Place_on_a/the | the  Place_on_a/the
+Place_on_a/the -> balcony | bus | train | plane | shelf | box
+Time -> for U | since F
+Number -> Numeric
+Numeric -> Digit Numeric | Digit
+Digit -> 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0
+U -> Number hours | Number minutes | Number days | Number seconds
+F -> morning | yesterday | Monday | Saturday | 2019 | holidays
+H -> have | haven't
+H_s -> has | hasn't
