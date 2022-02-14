@@ -9,7 +9,7 @@ Adjective -> nice | beautiful | small | big | black | white | typical | interest
 P -> We | They | You | I
 P_s -> He | She | It
 Verb_ing -> V_ing | VerbGR_ing
-VerbGR_ing -> V_ing, VerbGR_ing | V_ing and V_ing
+VerbGR_ing -> V_ing , VerbGR_ing | V_ing and V_ing
 V_ing -> writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living
 Additional -> Place Time | Place | Time 
 Place -> in Place_in | at Place_at | on Place_on
