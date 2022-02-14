@@ -1,133 +1,133 @@
     \item NounGR = been
     \item H$_s$ > been
-    \item have | haven't > been
+    \item \{have, haven't\} > been
     \item H > been
-    \item has | hasn't > been
+    \item \{has, hasn't\} > been
     \item been = Verb$_{ing}$
     \item been < V$_{ing}$
     \item been < VerbGR$_{ing}$
-    \item been < writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living
+    \item been < \{writing, reading, playing, finding, studying, shopping, watching, listening, traveling, preparing, cooking, speaking, spending, standing, talking, living\}
     \item Verb$_{ing}$ = Additional
-    \item Verb$_{ing}$ < Place | in | at | on | Time | for | since
-    \item V$_{ing}$ > Place | in | at | on | Time | for | since
-    \item VerbGR$_{ing}$ > Place | in | at | on | Time | for | since
-    \item writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living > Place | in | at | on | Time | for | since
+    \item Verb$_{ing}$ < \{Place, in, at, on, Time, for, since\}
+    \item V$_{ing}$ > \{Place, in, at, on, Time, for, since\}
+    \item VerbGR$_{ing}$ > \{Place, in, at, on, Time, for, since\}
+    \item \{writing, reading, playing, finding, studying, shopping, watching, listening, traveling, preparing, cooking, speaking, spending, standing, talking, living\} > \{Place, in, at, on, Time, for, since\}
     \item Additional = .
-    \item Place | Time > .
-    \item Place$_{in}$ | Place$_{at}$ | Place$_{on}$ > .
-    \item garden | kitchen | factory | bank | river | city | bed | London | Russia | home | work | school | university | college | war | door | airport | desk | gym | doctor’s | bottom | window | table | balcony | bus | train | plane | shelf | box > .
-    \item F | U > .
-    \item hours | minutes | days | seconds | morning | yesterday | Monday | Saturday | 2019 | holidays > .
+    \item \{Place, Time\} > .
+    \item \{Place$_{in}$, Place$_{at}$, Place$_{on}$\} > .
+    \item \{garden, kitchen, factory, bank, river, city, bed, London, Russia, home, work, school, university, college, war, door, airport, desk, gym, doctor’s, bottom, window, table, balcony, bus, train, plane, shelf, box\} > .
+    \item \{F, U\} > .
+    \item \{hours, minutes, days, seconds, morning, yesterday, Monday, Saturday, 2019, holidays\} > .
     \item Verb$_{ing}$ = .
     \item V$_{ing}$ > .
     \item VerbGR$_{ing}$ > .
-    \item writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living > .
+    \item \{writing, reading, playing, finding, studying, shopping, watching, listening, traveling, preparing, cooking, speaking, spending, standing, talking, living\} > .
     \item A = AdjGR
     \item A < AdjectiveGR
     \item A < Adjective
-    \item A < nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever
+    \item A < \{nice, beautiful, small, big, black, white, typical, interesting, new, old, self-centred, dull, clever\}
     \item AdjGR = Noun$_a$
-    \item AdjGR < cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
-    \item AdjectiveGR > cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
-    \item Adjective > cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
-    \item nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever > cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
+    \item AdjGR < \{cat, dog, boy, girl, magazine, bird, student, teacher, man, tourist, chief, soldier\}
+    \item AdjectiveGR > \{cat, dog, boy, girl, magazine, bird, student, teacher, man, tourist, chief, soldier\}
+    \item Adjective > \{cat, dog, boy, girl, magazine, bird, student, teacher, man, tourist, chief, soldier\}
+    \item \{nice, beautiful, small, big, black, white, typical, interesting, new, old, self-centred, dull, clever\} > \{cat, dog, boy, girl, magazine, bird, student, teacher, man, tourist, chief, soldier\}
     \item Noun$_a$ = H$_s$
-    \item Noun$_a$ < has | hasn't
-    \item cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier > has | hasn't
+    \item Noun$_a$ < \{has, hasn't\}
+    \item \{cat, dog, boy, girl, magazine, bird, student, teacher, man, tourist, chief, soldier\} > \{has, hasn't\}
     \item The = AdjGR
     \item The < AdjectiveGR
     \item The < Adjective
-    \item The < nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever
+    \item The < \{nice, beautiful, small, big, black, white, typical, interesting, new, old, self-centred, dull, clever\}
     \item AdjGR = Noun$_{the}$
-    \item AdjGR < boys | girls | students | books | teachers | tourists
-    \item AdjectiveGR > boys | girls | students | books | teachers | tourists
-    \item Adjective > boys | girls | students | books | teachers | tourists
-    \item nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever > boys | girls | students | books | teachers | tourists
+    \item AdjGR < \{boys, girls, students, books, teachers, tourists\}
+    \item AdjectiveGR > \{boys, girls, students, books, teachers, tourists\}
+    \item Adjective > \{boys, girls, students, books, teachers, tourists\}
+    \item \{nice, beautiful, small, big, black, white, typical, interesting, new, old, self-centred, dull, clever\} > \{boys, girls, students, books, teachers, tourists\}
     \item Noun$_{the}$ = H
-    \item Noun$_{the}$ < have | haven't
-    \item boys | girls | students | books | teachers | tourists > have | haven't
+    \item Noun$_{the}$ < \{have, haven't\}
+    \item \{boys, girls, students, books, teachers, tourists\} > \{have, haven't\}
     \item AdjGR = Noun
-    \item AdjGR < lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money
-    \item AdjectiveGR > lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money
-    \item Adjective > lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money
-    \item nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever > lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money
+    \item AdjGR < \{lunch, people, water, art, love, happiness, advice, information, news, sugar, butter, electricity, gas, power, money\}
+    \item AdjectiveGR > \{lunch, people, water, art, love, happiness, advice, information, news, sugar, butter, electricity, gas, power, money\}
+    \item Adjective > \{lunch, people, water, art, love, happiness, advice, information, news, sugar, butter, electricity, gas, power, money\}
+    \item \{nice, beautiful, small, big, black, white, typical, interesting, new, old, self-centred, dull, clever\} > \{lunch, people, water, art, love, happiness, advice, information, news, sugar, butter, electricity, gas, power, money\}
     \item Noun = H
-    \item Noun < have | haven't
-    \item lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money > have | haven't
+    \item Noun < \{have, haven't\}
+    \item \{lunch, people, water, art, love, happiness, advice, information, news, sugar, butter, electricity, gas, power, money\} > \{have, haven't\}
     \item A = Noun$_a$
-    \item A < cat | dog | boy | girl | magazine | bird | student | teacher | man | tourist | chief | soldier
+    \item A < \{cat, dog, boy, girl, magazine, bird, student, teacher, man, tourist, chief, soldier\}
     \item The = Noun$_{the}$
-    \item The < boys | girls | students | books | teachers | tourists
+    \item The < \{boys, girls, students, books, teachers, tourists\}
     \item P = H
-    \item P < have | haven't
-    \item We | They | You | I > have | haven't
+    \item P < \{have, haven't\}
+    \item \{We, They, You, I\} > \{have, haven't\}
     \item P$_s$ = H$_s$
-    \item P$_s$ < has | hasn't
-    \item He | She | It > has | hasn't
+    \item P$_s$ < \{has, hasn't\}
+    \item \{He, She, It\} > \{has, hasn't\}
     \item Adjective = AdjectiveGR
     \item Adjective < Adjective
-    \item Adjective < nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever
-    \item nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever > Adjective
-    \item nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever > nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever
+    \item Adjective < \{nice, beautiful, small, big, black, white, typical, interesting, new, old, self-centred, dull, clever\}
+    \item \{nice, beautiful, small, big, black, white, typical, interesting, new, old, self-centred, dull, clever\} > Adjective
+    \item \{nice, beautiful, small, big, black, white, typical, interesting, new, old, self-centred, dull, clever\} > \{nice, beautiful, small, big, black, white, typical, interesting, new, old, self-centred, dull, clever\}
     \item V$_{ing}$ = ,
-    \item writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living > ,
+    \item \{writing, reading, playing, finding, studying, shopping, watching, listening, traveling, preparing, cooking, speaking, spending, standing, talking, living\} > ,
     \item , = VerbGR$_{ing}$
     \item , < V$_{ing}$
-    \item , < writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living
+    \item , < \{writing, reading, playing, finding, studying, shopping, watching, listening, traveling, preparing, cooking, speaking, spending, standing, talking, living\}
     \item V$_{ing}$ = and
-    \item writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living > and
+    \item \{writing, reading, playing, finding, studying, shopping, watching, listening, traveling, preparing, cooking, speaking, spending, standing, talking, living\} > and
     \item and = V$_{ing}$
-    \item and < writing | reading | playing | finding | studying | shopping | watching | listening | traveling | preparing | cooking | speaking | spending | standing | talking | living
+    \item and < \{writing, reading, playing, finding, studying, shopping, watching, listening, traveling, preparing, cooking, speaking, spending, standing, talking, living\}
     \item Place = Time
-    \item Place < for | since
-    \item Place$_{in}$ | Place$_{at}$ | Place$_{on}$ > for | since
-    \item Place$_{in\;a/the}$ | London | Russia > for | since
-    \item garden | kitchen | factory | bank | river | city | bed > for | since
-    \item Place$_{at\;the}$ | home | work | school | university | college | war > for | since
-    \item door | airport | desk | gym | doctor’s | bottom | window | table > for | since
-    \item Place$_{on\;a/the}$ > for | since
-    \item balcony | bus | train | plane | shelf | box > for | since
+    \item Place < \{for, since\}
+    \item \{Place$_{in}$, Place$_{at}$, Place$_{on}$\} > \{for, since\}
+    \item \{Place$_{in\;a/the}$, London, Russia\} > \{for, since\}
+    \item \{garden, kitchen, factory, bank, river, city, bed\} > \{for, since\}
+    \item \{Place$_{at\;the}$, home, work, school, university, college, war\} > \{for, since\}
+    \item \{door, airport, desk, gym, doctor’s, bottom, window, table\} > \{for, since\}
+    \item Place$_{on\;a/the}$ > \{for, since\}
+    \item \{balcony, bus, train, plane, shelf, box\} > \{for, since\}
     \item in = Place$_{in}$
-    \item in < the | a | London | Russia
+    \item in < \{the, a, London, Russia\}
     \item the = Place$_{in\;a/the}$
-    \item the < garden | kitchen | factory | bank | river | city | bed
+    \item the < \{garden, kitchen, factory, bank, river, city, bed\}
     \item a = Place$_{in\;a/the}$
-    \item a < garden | kitchen | factory | bank | river | city | bed
+    \item a < \{garden, kitchen, factory, bank, river, city, bed\}
     \item at = Place$_{at}$
-    \item at < the | home | work | school | university | college | war
+    \item at < \{the, home, work, school, university, college, war\}
     \item the = Place$_{at\;the}$
-    \item the < door | airport | desk | gym | doctor’s | bottom | window | table
+    \item the < \{door, airport, desk, gym, doctor’s, bottom, window, table\}
     \item on = Place$_{on}$
-    \item on < a | the
+    \item on < \{a, the\}
     \item a = Place$_{on\;a/the}$
-    \item a < balcony | bus | train | plane | shelf | box
+    \item a < \{balcony, bus, train, plane, shelf, box\}
     \item the = Place$_{on\;a/the}$
-    \item the < balcony | bus | train | plane | shelf | box
+    \item the < \{balcony, bus, train, plane, shelf, box\}
     \item for = U
     \item for < Number
     \item for < Numeric
     \item for < Digit
-    \item for < 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0
+    \item for < \{1, 2, 3, 4, 5, 6, 7, 8, 9, 0\}
     \item since = F
-    \item since < morning | yesterday | Monday | Saturday | 2019 | holidays
+    \item since < \{morning, yesterday, Monday, Saturday, 2019, holidays\}
     \item Digit = Numeric
     \item Digit < Digit
-    \item Digit < 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0
-    \item 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 > Digit
-    \item 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 > 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0
+    \item Digit < \{1, 2, 3, 4, 5, 6, 7, 8, 9, 0\}
+    \item \{1, 2, 3, 4, 5, 6, 7, 8, 9, 0\} > Digit
+    \item \{1, 2, 3, 4, 5, 6, 7, 8, 9, 0\} > \{1, 2, 3, 4, 5, 6, 7, 8, 9, 0\}
     \item Number = hours
     \item Numeric > hours
     \item Digit > hours
-    \item 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 > hours
+    \item \{1, 2, 3, 4, 5, 6, 7, 8, 9, 0\} > hours
     \item Number = minutes
     \item Numeric > minutes
     \item Digit > minutes
-    \item 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 > minutes
+    \item \{1, 2, 3, 4, 5, 6, 7, 8, 9, 0\} > minutes
     \item Number = days
     \item Numeric > days
     \item Digit > days
-    \item 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 > days
+    \item \{1, 2, 3, 4, 5, 6, 7, 8, 9, 0\} > days
     \item Number = seconds
     \item Numeric > seconds
     \item Digit > seconds
-    \item 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 > seconds
+    \item \{1, 2, 3, 4, 5, 6, 7, 8, 9, 0\} > seconds
