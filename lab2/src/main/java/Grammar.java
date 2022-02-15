@@ -37,7 +37,7 @@ public class Grammar {
         List<String> Place_on = Arrays.asList("balcony","bus","train","plane","shelf","box");
         List<String> F = Arrays.asList("morning","yesterday","Monday","Saturday","holidays");
         List<String> U = Arrays.asList("hours","days","seconds","minutes");
-        List<String> add = Arrays.asList("for", "since", "in", "at", "on","1","2","3","4","5","6","7","8","9","0");
+        List<String> add = Arrays.asList("and","for", "since", "in", "at", "on","1","2","3","4","5","6","7","8","9","0", ",", ".");
         alphabet.addAll(NounA);
         alphabet.addAll(NounTHE);
         alphabet.addAll(Noun);
@@ -119,15 +119,18 @@ public class Grammar {
 
     public void checkAlphabet() {
         relation = new ArrayList<>();
+        if (sentence.equals(Arrays.asList("[", "]"))) {
+            throw new RuntimeException("Цепочка не принадлежит грамматике " + getAll());
+        }
         for (int i = 0; i < sentence.size() - 1; i++) {
             Pair<String, String> pair = Pair.of(sentence.get(i), sentence.get(i + 1));
             Relation rel = relationsMap.get(pair);
             if (rel == null) {
                 relation.add(Relation.Q);
-                if (!alp().contains(sentence.get(i))) {
+                if (!alp().contains(sentence.get(i)) && !sentence.get(i).equals("[")) {
                     throw new RuntimeException("Цепочка не принадлежит грамматике " + getAll() + "\nТерминал не из алфавита: " + sentence.get(i));
                 }
-                if (!alp().contains(sentence.get(i + 1))) {
+                if (!alp().contains(sentence.get(i + 1)) && !sentence.get(i).equals("]")) {
                     throw new RuntimeException("Цепочка не принадлежит грамматике " + getAll() + "\nТерминал не из алфавита: " + sentence.get(i + 1));
                 }
                 break;
