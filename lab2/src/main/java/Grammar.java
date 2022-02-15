@@ -137,8 +137,10 @@ public class Grammar {
         relation = null;
     }
 
+    List<String> key;
+
     void step(int start, int end) {
-        List<String> key = sentence.subList(start, end);
+        key = sentence.subList(start, end);
         List<String> sentenceNew = new ArrayList<>();
         for (int i = 0; i < sentence.size(); i++) {
             if (i < start || i >= end) {
@@ -182,8 +184,9 @@ public class Grammar {
         checkAlphabet();
         updateRelation();
         while (!sentence.equals(Arrays.asList("[", "S", "]"))) {
-            System.out.println(getAll());
+            System.out.print(getAll() + " ");
             step();
+            System.out.println(rules.get(key) + " <= " + key);
         }
         System.out.println(getAll());
         return true;
