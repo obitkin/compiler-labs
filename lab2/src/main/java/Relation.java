@@ -1,7 +1,8 @@
 public enum Relation {
     EQUAL("="),
     LESS("<"),
-    MORE(">");
+    MORE(">"),
+    Q("?");
 
     private final String str;
 

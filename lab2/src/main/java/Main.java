@@ -27,7 +27,7 @@ public class Main {
             String left = list.get(0).trim();
             List<String> right = Arrays.stream(list.get(1).split("\\|")).map(String::trim).collect(Collectors.toList());
             for (String rightStr : right) {
-                res.add(Pair.of(Arrays.stream(rightStr.split(" ")).collect(Collectors.toList()), left));
+                res.add(Pair.of(Arrays.stream(rightStr.split(" ")).filter(str -> !str.isEmpty()).collect(Collectors.toList()), left));
             }
         }
         Map<List<String>, String> map = res.stream().collect(Collectors.toMap(Pair::getFirst, Pair::getSecond));

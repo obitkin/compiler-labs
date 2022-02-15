@@ -17,7 +17,7 @@ Place_in -> the Place_in_a/the | a Place_in_a/the | London | Russia
 Place_in_a/the -> garden | kitchen | factory | bank | river | city | bed 
 Place_at -> the Place_at_the | home | work | school | university | college | war 
 Place_at_the -> door | airport | desk | gym | doctor's | bottom | window | table
-Place_on -> a Place_on_a/the | the  Place_on_a/the
+Place_on -> a Place_on_a/the | the Place_on_a/the
 Place_on_a/the -> balcony | bus | train | plane | shelf | box
 Time -> for U | since F
 Number -> Numeric
