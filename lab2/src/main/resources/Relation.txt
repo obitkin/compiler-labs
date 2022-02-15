@@ -15,6 +15,7 @@ writing | reading | playing | finding | studying | shopping | watching | listeni
 Additional = .
 Place | Time > .
 Place_in | Place_at | Place_on > .
+Place_in_a/the | Place_at_the | Place_on_a/the > .
 garden | kitchen | factory | bank | river | city | bed | London | Russia | home | work | school | university | college | war | door | airport | desk | gym | doctor’s | bottom | window | table | balcony | bus | train | plane | shelf | box > .
 F | U > .
 hours | minutes | days | seconds | morning | yesterday | Monday | Saturday | 2019 | holidays > .
@@ -109,7 +110,7 @@ for < Numeric
 for < Digit
 for < 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0
 since = F
-since < morning | yesterday | Monday | Saturday | 2019 | holidays
+since < morning | yesterday | Monday | Saturday | holidays
 Digit = Numeric
 Digit < Digit
 Digit < 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0
@@ -131,5 +132,5 @@ Number = seconds
 Numeric > seconds
 Digit > seconds
 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 > seconds
-[ < A | The | NounGR | AdjGR | Noun | P | P_s | AdjectiveGR | Adjective | nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever | unch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money | We | They | You | I | He | She | It
+[ < A | The | NounGR | AdjGR | Noun | P | P_s | AdjectiveGR | Adjective | nice | beautiful | small | big | black | white | typical | interesting | new | old | self-centred | dull | clever | lunch | people | water | art | love | happiness | advice | information | news | sugar | butter | electricity | gas | power | money | We | They | You | I | He | She | It
 . > ]

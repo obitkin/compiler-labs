@@ -16,6 +16,11 @@ public class Grammar {
         this.rules = rules;
     }
 
+    List<String> alp() {
+        List<String> alphabet = new ArrayList<>();
+        return alphabet;
+    }
+
     List<String> sentence;
     List<Relation> relation;
 
@@ -73,6 +78,26 @@ public class Grammar {
         }
     }
 
+    public void checkAlphabet() {
+        relation = new ArrayList<>();
+        for (int i = 0; i < sentence.size() - 1; i++) {
+            Pair<String, String> pair = Pair.of(sentence.get(i), sentence.get(i + 1));
+            Relation rel = relationsMap.get(pair);
+            if (rel == null) {
+                relation.add(Relation.Q);
+                if (!alp().contains(sentence.get(i))) {
+                    throw new RuntimeException("Цепочка не принадлежит грамматике " + getAll() + " Терминал не из алфавита " + sentence.get(i));
+                }
+                if (!alp().contains(sentence.get(i + 1))) {
+                    throw new RuntimeException("Цепочка не принадлежит грамматике " + getAll() + " Терминал не из алфавита" + sentence.get(i + 1));
+                }
+                break;
+            }
+            relation.add(relationsMap.get(pair));
+        }
+        relation = null;
+    }
+
     void step(int start, int end) {
         List<String> key = sentence.subList(start, end);
         List<String> sentenceNew = new ArrayList<>();
@@ -115,6 +140,7 @@ public class Grammar {
         sentence = parse(input);
         sentence.add(0, "[");
         sentence.add("]");
+        checkAlphabet();
         updateRelation();
         while (!sentence.equals(Arrays.asList("[", "S", "]"))) {
             System.out.println(getAll());
@@ -124,44 +150,174 @@ public class Grammar {
         return true;
     }
 
+    Random random = new Random();
+
     public String generate() {
-        Random random = new Random();
-        String output;
-        do {
-            int size = random.nextInt(25) + random.nextInt(25);
-            output = "";
-            for (int i = 0; i < size; i++) {
-                if (output.isEmpty()) {
-                    output += randStrings(List.of("(", "a"));
-                }
-                String last = String.valueOf(output.charAt(output.length() - 1));
-                switch (last) {
-                    case "(" : {
-                        output += randStrings(List.of("(", "a"));
-                        break;
-                    }
-                    case "a" : {
-                        output += randStrings(List.of("+", "*", ")"));
-                        break;
-                    }
-                    case ")" : {
-                        output += randStrings(List.of("+", ")", "*"));
-                        break;
-                    }
-                    case "*" :
-                    case "+" : {
-                        output += randStrings(List.of("a", "("));
-                        break;
-                    }
-                    default: {
-                        throw new RuntimeException("Unexpected symbol");
-                    }
-                }
-            }
-            output += "$";
-        } while (!process(output));
-        return output;
+        String res;
+        if (random.nextInt(3) > 1) {
+            res = NounGR() + " been " + Verb_ing() + ".";
+        } else {
+            res = NounGR() + " been " + Verb_ing() + " " + Additional() + ".";
+        }
+        process(res);
+        return res;
     }
+
+    String NounGR() {
+        List<String> NounA = Arrays.asList("cat", "dog", "boy", "girl", "magazine", "bird", "student", "teacher", "man", "tourist", "chief", "soldier");
+        List<String> NounTHE = Arrays.asList("boys", "girls", "students", "books", "teachers", "tourists");
+        List<String> Noun = Arrays.asList("lunch", "people", "water", "art", "love", "happiness", "advice", "information", "news", "sugar", "butter", "electricity", "gas", "power", "money");
+        List<String> P = Arrays.asList("We", "They", "I", "You");
+        List<String> Ps = Arrays.asList("He", "She", "It");
+        List<String> H = Arrays.asList("have", "haven't");
+        List<String> Hs = Arrays.asList("has", "hasn't");
+        List<String> Articles = Arrays.asList("A", "The", "", "A", "The");
+
+        String result = "";
+        String art = randStrings(Articles);
+        result += art;
+        String adj = AdjGR();
+        if (!adj.isEmpty()) {
+            if (!result.isEmpty()) {
+                result += " ";
+            }
+            result += adj;
+        }
+        switch (art) {
+            case "A" : {
+                result += " " + randStrings(NounA) + " " + randStrings(Hs);
+                break;
+            }
+            case "The" : {
+                result += " " + randStrings(NounTHE) + " " + randStrings(H);
+                break;
+            }
+            case "" : {
+                if (!result.isEmpty()) {
+                    result += " ";
+                }
+                switch (random.nextInt(3)) {
+                    case 0 : {
+                        result += randStrings(Noun) + " " + randStrings(H);
+                        break;
+                    }
+                    case 1 : {
+                        result = randStrings(P) + " " + randStrings(H);
+                        break;
+                    }
+                    case 2 : {
+                        result = randStrings(Ps) + " " + randStrings(Hs);
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+        return result;
+    }
+
+    String AdjGR() {
+        List<String> adj = Arrays.asList("nice","beautiful","small","big","black","white","typical","interesting","new","old","self-centred","dull","clever");
+        String res = "";
+        String delimeter = "";
+        while (random.nextInt(3) <= 1) {
+            res += delimeter + randStrings(adj);
+            delimeter = " ";
+        }
+        return res;
+    }
+
+    String Verb_ing() {
+        List<String> verbs = Arrays.asList("writing" , "reading" , "playing" , "finding" , "studying" , "shopping" , "watching" , "listening" ,
+                "traveling" , "preparing" , "cooking" , "speaking" , "spending" , "standing" , "talking" , "living");
+        if (random.nextInt(3) == 0) {
+            return randStrings(verbs);
+        }
+        String res = randStrings(verbs);
+        String del = ", ";
+        while (random.nextInt(2) == 0) {
+            res += del + randStrings(verbs);
+        }
+        return res + " and " + randStrings(verbs);
+    }
+
+    String Additional() {
+        switch (random.nextInt(5)) {
+            case 0 : {
+                return Time();
+            }
+            case 1 : {
+                return Place();
+            }
+            default:  {
+                return Place() + " " + Time();
+            }
+        }
+    }
+
+    String Place() {
+        List<String> Place_in_athe = Arrays.asList("garden","kitchen","factory","bank","river","city","bed");
+        List<String> Place_in = Arrays.asList("London","Russia");
+        List<String> Place_at = Arrays.asList("home","work","school","university","college","war");
+        List<String> Place_at_the = Arrays.asList("door","airport","desk","gym","doctor’s","bottom","window","table");
+        List<String> Place_on = Arrays.asList("balcony","bus","train","plane","shelf","box");
+        String res = "";
+        switch (random.nextInt(3)) {
+            case 0 : {
+                res += "in ";
+                switch (random.nextInt(3)) {
+                    case 0 : {
+                        res += "the ";
+                        res += randStrings(Place_in_athe);
+                        break;
+                    }
+                    case 1 : {
+                        res += "a ";
+                        res += randStrings(Place_in_athe);
+                        break;
+                    }
+                    case 2 : {
+                        res += randStrings(Place_in);
+                        break;
+                    }
+                }
+                break;
+            }
+            case 1 : {
+                res += "at ";
+                if (random.nextInt(2) == 0) {
+                    res += "the " + randStrings(Place_at_the);
+                }
+                else {
+                    res += randStrings(Place_at);
+                }
+                break;
+            }
+            case 2 : {
+                res += "on ";
+                if (random.nextInt(2) == 0) {
+                    res += "the " + randStrings(Place_on);
+                }
+                else {
+                    res += "a " + randStrings(Place_on);
+                }
+                break;
+            }
+        }
+        return res;
+    }
+
+    String Time() {
+        List<String> F = Arrays.asList("morning","yesterday","Monday","Saturday","holidays");
+        List<String> U = Arrays.asList("hours","days","seconds","minutes");
+        if (random.nextInt(2) == 0) {
+            return "since" + " " + randStrings(F);
+        }
+        else {
+            return "for" + " " + random.nextInt(99) + " " + randStrings(U);
+        }
+    }
+
 
     private String randStrings(List<String> list) {
         Random random = new Random();
