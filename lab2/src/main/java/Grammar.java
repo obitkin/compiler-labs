@@ -20,12 +20,21 @@ public class Grammar {
     List<Relation> relation;
 
     List<String> parse(String sentence) {
-        return Arrays.stream(sentence.split(" "))
+        List<String> res = Arrays.stream(sentence.split(" "))
                 .flatMap(str -> Arrays.stream(str.replaceAll(",", "ε,ε").split("ε")))
                 .flatMap(str -> Arrays.stream(str.replaceAll("\\.", "ε.").split("ε")))
                 .map(String::trim)
                 .filter(str -> !str.isEmpty())
                 .collect(Collectors.toList());
+        List<String> result = new ArrayList<>();
+        res.forEach(str -> {
+            if (str.matches("^\\d+$")) {
+                result.addAll(Arrays.asList(str.split("")));
+            } else {
+                result.add(str);
+            }
+        });
+        return result;
     }
 
     public String getAll() {
@@ -74,9 +83,7 @@ public class Grammar {
     }
 
     void step() {
-        if (relation.stream().allMatch(rel -> rel.equals(Relation.EQUAL))) {
-            step(0, sentence.size());
-        }
+        updateRelation();
         int indexStart = -1;
         int indexEnd = -1;
         for (int i = 0; i < relation.size(); i++) {
@@ -100,6 +107,8 @@ public class Grammar {
 
     public boolean process(String input) {
         sentence = parse(input);
+        sentence.add(0, "[");
+        sentence.add("]");
         updateRelation();
         while (sentence.size() > 1) {
             System.out.println(getAll());
