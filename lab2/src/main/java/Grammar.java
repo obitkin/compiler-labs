@@ -18,6 +18,45 @@ public class Grammar {
 
     List<String> alp() {
         List<String> alphabet = new ArrayList<>();
+        List<String> NounA = Arrays.asList("cat", "dog", "boy", "girl", "magazine", "bird", "student", "teacher", "man", "tourist", "chief", "soldier");
+        List<String> NounTHE = Arrays.asList("boys", "girls", "students", "books", "teachers", "tourists");
+        List<String> Noun = Arrays.asList("lunch", "people", "water", "art", "love", "happiness", "advice", "information", "news", "sugar", "butter", "electricity", "gas", "power", "money");
+        List<String> P = Arrays.asList("We", "They", "I", "You");
+        List<String> Ps = Arrays.asList("He", "She", "It");
+        List<String> H = Arrays.asList("have", "haven't");
+        List<String> Hs = Arrays.asList("has", "hasn't");
+        List<String> Been = Arrays.asList("been");
+        List<String> Articles = Arrays.asList("A", "The", "the", "a");
+        List<String> adj = Arrays.asList("nice","beautiful","small","big","black","white","typical","interesting","new","old","self-centred","dull","clever");
+        List<String> verbs = Arrays.asList("writing" , "reading" , "playing" , "finding" , "studying" , "shopping" , "watching" , "listening" ,
+                "traveling" , "preparing" , "cooking" , "speaking" , "spending" , "standing" , "talking" , "living");
+        List<String> Place_in_athe = Arrays.asList("garden","kitchen","factory","bank","river","city","bed");
+        List<String> Place_in = Arrays.asList("London","Russia");
+        List<String> Place_at = Arrays.asList("home","work","school","university","college","war");
+        List<String> Place_at_the = Arrays.asList("door","airport","desk","gym","doctor’s","bottom","window","table");
+        List<String> Place_on = Arrays.asList("balcony","bus","train","plane","shelf","box");
+        List<String> F = Arrays.asList("morning","yesterday","Monday","Saturday","holidays");
+        List<String> U = Arrays.asList("hours","days","seconds","minutes");
+        List<String> add = Arrays.asList("for", "since", "in", "at", "on","1","2","3","4","5","6","7","8","9","0");
+        alphabet.addAll(NounA);
+        alphabet.addAll(NounTHE);
+        alphabet.addAll(Noun);
+        alphabet.addAll(Ps);
+        alphabet.addAll(P);
+        alphabet.addAll(H);
+        alphabet.addAll(Hs);
+        alphabet.addAll(Articles);
+        alphabet.addAll(adj);
+        alphabet.addAll(verbs);
+        alphabet.addAll(Place_in_athe);
+        alphabet.addAll(Place_in);
+        alphabet.addAll(Place_at);
+        alphabet.addAll(Place_at_the);
+        alphabet.addAll(Place_on);
+        alphabet.addAll(F);
+        alphabet.addAll(U);
+        alphabet.addAll(add);
+        alphabet.addAll(Been);
         return alphabet;
     }
 
@@ -86,10 +125,10 @@ public class Grammar {
             if (rel == null) {
                 relation.add(Relation.Q);
                 if (!alp().contains(sentence.get(i))) {
-                    throw new RuntimeException("Цепочка не принадлежит грамматике " + getAll() + " Терминал не из алфавита " + sentence.get(i));
+                    throw new RuntimeException("Цепочка не принадлежит грамматике " + getAll() + "\nТерминал не из алфавита: " + sentence.get(i));
                 }
                 if (!alp().contains(sentence.get(i + 1))) {
-                    throw new RuntimeException("Цепочка не принадлежит грамматике " + getAll() + " Терминал не из алфавита" + sentence.get(i + 1));
+                    throw new RuntimeException("Цепочка не принадлежит грамматике " + getAll() + "\nТерминал не из алфавита: " + sentence.get(i + 1));
                 }
                 break;
             }
@@ -159,7 +198,7 @@ public class Grammar {
         } else {
             res = NounGR() + " been " + Verb_ing() + " " + Additional() + ".";
         }
-        process(res);
+//        process(res);
         return res;
     }
 
